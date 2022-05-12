@@ -23,7 +23,12 @@ auto_increment = 10000;
 
 create table avaliacao (
 fk_grupo int,
-fk_professor int,
+fk_professor1 int,
+foreign key (fk_professor1) references professor (id_professor),
+fk_professor2 int,
+foreign key (fk_professor2) references professor (id_professor),
+fk_professor3 int,
+foreign key (fk_professor3) references professor (id_professor),
 data_hora datetime,
 nota decimal(3,2),
 primary key (fk_grupo, data_hora));
@@ -67,8 +72,9 @@ select* from grupo;
 select* from professor;
 select* from avaliacao;
 
-
-
-
-
+insert into avaliacao values 
+(1,10000,10001,null, 2022-05-01,'8.1'),
+(2,10001,10004,null, 2022-03-01,'9.3'),
+(3,10002,10003,null, 2021-08-01,'6.7'),
+(4,10003,10000,null, 2022-02-01,'7.4');
 
